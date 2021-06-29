@@ -3,4 +3,10 @@
     <style name="Theme.SimplePayment" parent="Theme.MaterialComponents.Light">
 
     </style>
+    
+ <style name="FabShape1" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+     <item name="cornerSize">4dp</item>
+     <item name="cornerFamily">cut</item>
+ </style>
+
 </resources>
