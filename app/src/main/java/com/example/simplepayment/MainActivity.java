@@ -2,46 +2,55 @@ package com.example.simplepayment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+        bottomNavigationView.setSelectedItemId(R.id.fragmentHome);
+
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            // By using switch we can easily get
-            // the selected fragment
-            // by using there id.
-            //Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.home:
-                    //selectedFragment = new AlgorithmFragment();
-                    break;
-                case R.id.details:
-                    //selectedFragment = new CourseFragment();
-                    break;
-                case R.id.profile:
-                    //selectedFragment = new ProfileFragment();
-                    break;
-            }
-            // It will help to replace the
-            // one fragment to other.
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        // Switch is going to be deprecated in these cases !! That is why I'm using if else
+        int idOfItem = item.getItemId();
+
+        if (idOfItem == R.id.fragmentHome){
+            FragmentHome fragmentHome1 = new FragmentHome();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, fragmentHome1).commit();
+            return true;
+        } else if(idOfItem == R.id.fragmentDetails){
+            FragmentDetails fragmentDetails1 = new FragmentDetails();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, fragmentDetails1).commit();
+            return true;
+        } else if (idOfItem == R.id.fragmentProfile){
+            FragmentProfile fragmentProfile1 = new FragmentProfile();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, fragmentProfile1).commit();
             return true;
         }
-    };
+
+        return false;
+
+
+    }
 
 }

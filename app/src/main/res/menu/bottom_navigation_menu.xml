@@ -1,16 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/fragmentHome"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="@string/home"/>
     <item
-        android:id="@+id/details"
+        android:id="@+id/fragmentDetails"
         android:enabled="true"
         android:icon="@drawable/ic_details"
         android:title="@string/details"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/fragmentProfile"
         android:enabled="true"
         android:icon="@drawable/ic_profile"
         android:title="@string/profile"/>
