@@ -1,12 +1,15 @@
 package com.example.simplepayment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class FragmentHome extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
 
     public FragmentHome() {
         // Required empty public constructor
@@ -58,7 +63,26 @@ public class FragmentHome extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d("Tag1","Hola1 Click");
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Button button = (Button) view.findViewById(R.id.button1);
+        Log.d("Tag3","Hola3 Click");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Tag2","Hola2 Click");
+                Intent i = new Intent(getActivity(), AddExpense.class);
+                getActivity().startActivity(i);
+            }
+        });
+        Log.d("Tag4","Hola4 Click");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
+
+    public void addTheExpense(View v){
+        Intent i = new Intent(getActivity(), AddExpense.class);
+        getActivity().startActivity(i);
+    }
+
 }
