@@ -7,8 +7,11 @@
 
     <string name="add_expense">Add Expense</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="edescription">Add Description</string>
     <string name="eamount">Amount</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="eshare">Person to share the expense with</string>
+    <string name="etype">How to split the amount</string>
+
 </resources>

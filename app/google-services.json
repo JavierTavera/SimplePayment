@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559308843543",
+    "project_id": "simplepayment-8168e",
+    "storage_bucket": "simplepayment-8168e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559308843543:android:56b8590f4854f1b5cb4a52",
+        "android_client_info": {
+          "package_name": "com.example.simplepayment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559308843543-ljgbmeg05k5sau2f6olbmkpdfo43cn2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmXGOkfib_Pw12zHTGpT4JjtYBeNovhKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559308843543-ljgbmeg05k5sau2f6olbmkpdfo43cn2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
