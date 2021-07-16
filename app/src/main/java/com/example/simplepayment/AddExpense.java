@@ -37,26 +37,42 @@ public class AddExpense extends AppCompatActivity {
     }
 
     public void dataOnFirestore(View v){
-        String descrip2;
+        String descrip2, person2, amount1, options;
+        int amount2;
+        //byte tipo2;
         TextInputLayout descrip = findViewById(R.id.textField1);
         descrip2 = descrip.getEditText().getText().toString();
         //Toast.makeText(this, descrip2, Toast.LENGTH_SHORT).show();
+
+        TextInputLayout amount = findViewById(R.id.textField2);
+        amount1 = amount.getEditText().getText().toString();
+        amount2 = Integer.parseInt(amount1);
+
+        TextInputLayout person = findViewById(R.id.textField3);
+        person2 = person.getEditText().getText().toString();
+
+        TextInputLayout options2 = findViewById(R.id.textField4);
+        options = options2.getEditText().getText().toString();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Map<String, Object> formu = new HashMap<>();
         formu.put("Description", descrip2);
+        formu.put("Amount", amount2);
+        formu.put("Person", person2);
+        formu.put("Options", options);
+
         db.collection("Prueba").add(formu).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(AddExpense.this, descrip2, Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(AddExpense.this, "Error in db", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AddExpense.this, "Error in db", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

@@ -56,5 +56,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
 
+    // Mine: Necessary for long libraries
     implementation "androidx.multidex:multidex:2.0.1"
+
+    // Mine: Necessary to get unique ID of installation
+    implementation 'com.google.firebase:firebase-installations:17.0.0'
 }
