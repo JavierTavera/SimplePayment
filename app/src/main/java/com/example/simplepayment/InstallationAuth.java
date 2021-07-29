@@ -51,6 +51,8 @@ public void instAuth(String whatActivity) {
                                         if (task.isSuccessful()) {
                                             for (QueryDocumentSnapshot document : task.getResult()) {
                                                 Log.d("TAG11", document.getId() + " => " + document.getData());
+                                                if(whatActivity == "AddExpense")
+                                                    theVar.setDocumentUserID(document.getId());
                                             }
                                             boolean isEmpty = task.getResult().isEmpty();
                                             // If ID is missing, create user AND ID

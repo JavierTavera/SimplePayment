@@ -13,5 +13,12 @@
     <string name="eamount">Amount</string>
     <string name="eshare">Person to share the expense with</string>
     <string name="etype">How to split the amount</string>
+    
+    <string-array name="howToShare">
+        <item>I pay. Share in equal parts</item>
+        <item>I am owed the full amount</item>
+        <item>He/She pays. Share in equal parts</item>
+        <item>He/She is owed the full amount</item>
+    </string-array>
 
 </resources>

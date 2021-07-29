@@ -64,12 +64,16 @@
             app:startIconDrawable="@drawable/ic_name"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
+                android:id="@+id/auto2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:completionHint="@string/eshare"
+                android:completionThreshold="2"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,6 +94,7 @@
                 android:inputType="none"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:completionHint="@string/etype"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
